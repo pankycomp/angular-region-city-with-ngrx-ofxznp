@@ -1,0 +1,34 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="4" scope="col">Country Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td>{{ country.name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Capital</th>
+      <td>{{ country.capital }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Population</th>
+      <td>{{ country.population }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Currencies</th>
+      <td>{{ country.currencies }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Flag</th>
+      <td>
+        <img 
+          [src]="country.flag" 
+          [alt]="country.name + ' Flag'"
+          [width]="100"/>
+      </td>
+    </tr>
+  </tbody>
+</table>

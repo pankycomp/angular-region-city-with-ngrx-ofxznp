@@ -1,0 +1,20 @@
+<div class="form-group list-group-item">
+  <label for="inputState">{{ label }}</label>
+  <select 
+    id="inputState" 
+    class="form-control"
+    [value]="defaultSelection?.name"
+    (change)="onOptionChange($event.target.value)"
+    >
+    <option 
+      [value]="null"
+      disabled>
+      Select
+    </option>
+    <option
+      *ngFor="let option of optionsList"
+      [value]="option.name">
+      {{ option.name }}
+    </option>
+  </select>
+</div>

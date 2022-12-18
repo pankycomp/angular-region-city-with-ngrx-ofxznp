@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <app-dropdown 
+      class="col"
+      label="Regions"
+      [optionsList]="regions$ | async"
+      [defaultSelection]="selectedRegion$ | async"
+      (optionChange)="handleOptionChange($event)"
+      >
+    </app-dropdown>
+    <app-dropdown 
+      class="col"
+      label="Countries"
+      [optionsList]="countries$ | async"
+      [defaultSelection]="selectedCountry$ | async"
+      (optionChange)="handleOptionChange($event)"
+      >
+    </app-dropdown>
+  </div>
+  <div 
+    class="row"
+    *ngIf="selectedCountry$ | async as country">
+    <app-country-details
+      class="col"
+      [country]="country">
+    </app-country-details>
+  </div>
+</div>
